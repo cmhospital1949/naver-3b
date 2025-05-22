@@ -4,7 +4,9 @@ MODEL_NAME = "naver-hyperclovax/HyperCLOVAX-SEED-Vision-Instruct-3B"
 
 
 def load_model():
+
     """Load tokenizer, processor, and model in float32 on CPU."""
+
 
     import torch
     from transformers import (
@@ -26,6 +28,7 @@ def load_model():
 
 
 def generate_reply(tokenizer, processor, model, text, image_path=None):
+
     """Generate a reply from text and optional image."""
     from PIL import Image
     import torch
