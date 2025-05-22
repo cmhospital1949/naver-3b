@@ -4,6 +4,10 @@ MODEL_NAME = "naver-hyperclovax/HyperCLOVAX-SEED-Vision-Instruct-3B"
 
 
 def load_model():
+
+    """Load tokenizer, processor, and model in float32 on CPU."""
+
+
     import torch
     from transformers import (
         AutoModelForCausalLM,
@@ -16,16 +20,24 @@ def load_model():
     model = AutoModelForCausalLM.from_pretrained(
         MODEL_NAME,
         torch_dtype=torch.float32,
+        device_map="cpu",
+
     )
     model.eval()
     return tokenizer, processor, model
 
 
 def generate_reply(tokenizer, processor, model, text, image_path=None):
+
+    """Generate a reply from text and optional image."""
     from PIL import Image
+    import torch
+
     image = Image.open(image_path).convert("RGB") if image_path else None
     inputs = processor(text=[text], images=[image] if image else None, return_tensors="pt")
-    outputs = model.generate(**inputs)
+    with torch.no_grad():
+        outputs = model.generate(**inputs)
+
     reply = tokenizer.decode(outputs[0], skip_special_tokens=True)
     return reply
 

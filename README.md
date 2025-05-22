@@ -4,6 +4,10 @@ This repository demonstrates a minimal chatbot built with
 [naver-hyperclovax/HyperCLOVAX-SEED-Vision-Instruct-3B].
 The bot supports text and image inputs and includes a simple GUI.
 
+The model must be loaded in **float32** precision for both the language and
+vision components due to the anyres projector.
+
+
 ## Installation
 
 ```bash
