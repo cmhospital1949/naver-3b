@@ -24,9 +24,7 @@ def load_model():
     model = AutoModelForCausalLM.from_pretrained(
         MODEL_NAME,
         torch_dtype=torch.float32,
-
         device_map="cpu",
-
     )
     model.eval()
     return tokenizer, processor, model
