@@ -8,7 +8,7 @@ except ImportError:  # pragma: no cover - PIL may not be installed
 else:
     PIL = Image
 
-from main import generate_reply
+from chatbot import generate_reply
 
 class DummyTokenizer:
     def decode(self, outputs, skip_special_tokens=True):

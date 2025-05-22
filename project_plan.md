@@ -18,3 +18,8 @@ This document tracks development of the HyperCLOVAX chatbot example.
 - Consolidated notes from `project_file.md` into this file.
 - Removed `project_file.md` from the repository.
 
+## 4. Refactor
+- Moved model utilities to new `chatbot.py` module.
+- Updated `main.py` to import from `chatbot.py`.
+- Adjusted tests to import the new module.
+
