@@ -6,6 +6,7 @@ MODEL_NAME = "naver-hyperclovax/HyperCLOVAX-SEED-Vision-Instruct-3B"
 def load_model():
 
 
+
     """Load tokenizer, processor, and model in float32 on CPU."""
 
     import torch
@@ -15,6 +16,7 @@ def load_model():
         AutoProcessor,
     )
 
+
     # Both the vision and language components must run in float32
 
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
@@ -23,8 +25,7 @@ def load_model():
         MODEL_NAME,
         torch_dtype=torch.float32,
 
-      
-      device_map={"": "cpu"},
+        device_map="cpu",
 
     )
     model.eval()
@@ -35,15 +36,9 @@ def generate_reply(tokenizer, processor, model, text, image_path=None):
 
   
     from PIL import Image
-
-    image = None
-    if image_path:
-        try:
-            image = Image.open(image_path).convert("RGB")
-        except Exception:
-            image = None
-
+    image = Image.open(image_path).convert("RGB") if image_path else None
     inputs = processor(text=[text], images=[image] if image else None, return_tensors="pt")
+    import torch
     with torch.no_grad():
         outputs = model.generate(**inputs)
 
