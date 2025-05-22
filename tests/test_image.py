@@ -39,4 +39,5 @@ class ImageTest(unittest.TestCase):
             os.remove(img_path)
 
 if __name__ == '__main__':
+
     unittest.main()
