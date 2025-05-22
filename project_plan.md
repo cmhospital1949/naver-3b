@@ -1,6 +1,5 @@
 # Project Plan
 
-
 This document tracks the development of the HyperCLOVAX chatbot example.
 
 ## 1. Setup Repository
