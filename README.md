@@ -5,7 +5,8 @@ This repository demonstrates a minimal chatbot built with
 [naver-hyperclovax/HyperCLOVAX-SEED-Vision-Instruct-3B](https://huggingface.co/naver-hyperclovax/HyperCLOVAX-SEED-Vision-Instruct-3B).
 The bot supports text and image inputs and includes a simple GUI. The
 model must be loaded in **float32** precision for both the language and
-vision components as noted in the official discussions.
+vision components as noted in the official discussions. Core utilities
+for loading the model are provided in `chatbot.py`.
 
 
 ## Installation

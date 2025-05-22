@@ -2,7 +2,7 @@ import os
 import tempfile
 import unittest
 
-from main import generate_reply
+from chatbot import generate_reply
 
 class DummyTokenizer:
     def decode(self, tokens, skip_special_tokens=True):
