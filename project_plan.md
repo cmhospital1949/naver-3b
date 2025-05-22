@@ -15,5 +15,6 @@ This document tracks development of the HyperCLOVAX chatbot example.
 - Wrote README with usage instructions.
 
 ## 3. Maintenance
-- Consolidated documentation into this file and removed `project_file.md`.
+- Consolidated notes from `project_file.md` into this file.
+- Removed `project_file.md` from the repository.
 
