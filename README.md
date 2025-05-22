@@ -6,6 +6,7 @@ The bot supports text and image inputs and includes a simple GUI. The
 model must be loaded in **float32** precision for both the language and
 vision components as noted in the official discussions.
 
+
 ## Installation
 
 ```bash
